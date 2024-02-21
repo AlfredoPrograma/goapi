@@ -1,0 +1,12 @@
+version: "2"
+sql:
+    - engine: "postgresql"
+      queries: "./queries/*.sql"
+      schema: "./migrations/*.sql"
+      database:
+        uri: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOSTNAME}:5432/${POSTGRES_DB}
+      gen:
+        go:
+          package: "models"
+          out: "models"
+          sql_package: "pgx/v5"
