@@ -6,3 +6,6 @@ tmp
 
 # Templating
 *_templ.go
+
+# Public
+public/assets/*_output.*

@@ -1,0 +1,19 @@
+package shared
+
+templ Page(title string) {
+	<!DOCTYPE html>
+	<html lang="en" class="h-full">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<meta name="robots" content="index, follow"/>
+			<meta name="language" content="English"/>
+			<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon"/>
+			<link rel="stylesheet" href="/public/assets/styles_output.css"/>
+			<title>{ title }</title>
+		</head>
+		<body class="h-full">
+			{ children... }
+		</body>
+	</html>
+}

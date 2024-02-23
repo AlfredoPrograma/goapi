@@ -9,6 +9,8 @@ func main() {
 	mustConnectDB()
 
 	app := echo.New()
+	app.Static("/public", "public")
+
 	app.GET("/", func(c echo.Context) error {
 		return Render(home.IndexTemplate(), c)
 

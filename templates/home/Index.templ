@@ -1,5 +1,19 @@
 package home
 
+import "github.com/alfredoprograma/goapi/templates/shared"
+
 templ IndexTemplate() {
-	<h1>Hello world from Templ with semi hot reload</h1>
+	@shared.Page("Home") {
+		<section class="py-6 text-center">
+			<header>
+				<h1 class="text-2xl font-bold">
+					<span>Develop web applications with </span>
+					<span class="text-sky-600">Go +</span>
+					<span class="text-indigo-600">HTMX +</span>
+					<span class="text-orange-400">Templ</span>
+				</h1>
+			</header>
+			<a class="font-bold text-xl text-blue-800 underline" href="https://github.com/AlfredoPrograma/goapi">Source code</a>
+		</section>
+	}
 }
