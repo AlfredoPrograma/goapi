@@ -1,14 +1,20 @@
 package main
 
 import (
-	"context"
-	"log"
+	"net/http"
+
+	"github.com/labstack/echo/v4"
 )
 
 func main() {
-	db := mustConnectDB()
+	mustConnectDB()
 
-	if err := db.Ping(context.Background()); err != nil {
-		log.Fatalln(err)
-	}
+	app := echo.New()
+	app.GET("/", func(c echo.Context) error {
+		return c.JSON(http.StatusOK, map[string]string{
+			"hello": "world",
+		})
+	})
+
+	app.Logger.Fatal(app.Start(":9000"))
 }
