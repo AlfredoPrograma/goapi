@@ -1,8 +1,7 @@
 package main
 
 import (
-	"net/http"
-
+	"github.com/alfredoprograma/goapi/templates/home"
 	"github.com/labstack/echo/v4"
 )
 
@@ -11,9 +10,8 @@ func main() {
 
 	app := echo.New()
 	app.GET("/", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, map[string]string{
-			"hello": "world",
-		})
+		return Render(home.IndexTemplate(), c)
+
 	})
 
 	app.Logger.Fatal(app.Start(":9000"))
