@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"context"
+	"log"
+)
 
 func main() {
-	fmt.Println("Hello world!")
+	db := mustConnectDB()
+
+	if err := db.Ping(context.Background()); err != nil {
+		log.Fatalln(err)
+	}
 }
