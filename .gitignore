@@ -9,3 +9,4 @@ tmp
 
 # Public
 public/assets/*_output.*
+public/assets/*min.*
